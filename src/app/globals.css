@@ -9,3 +9,32 @@
 .country-name{
     max-width: 150px;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.border-dark{
+    -webkit-box-shadow: 18px 18px 4px -11px rgba(36,35,36,0.66);
+-moz-box-shadow: 18px 18px 4px -11px rgba(36,35,36,0.66);
+box-shadow: 18px 18px 4px -11px rgba(36,35,36,0.66);
+  border: 2px solid  hsl(207, 26%, 17%);
+}
+.border-white{
+    border: 1px solid hsl(0, 0%, 100%);
+    -webkit-box-shadow: 18px 18px 4px -11px rgba(240,237,240,1);
+    -moz-box-shadow: 18px 18px 4px -11px rgba(240,237,240,1);
+    box-shadow: 18px 18px 4px -11px rgba(240,237,240,1);
+}
+.nav-shadow-dark{
+    border-bottom: 1.2px solid  hsl(207, 26%, 17%);;
+    -webkit-box-shadow: -2px 15px 4px -11px rgba(120,116,120,1);
+-moz-box-shadow: -2px 15px 4px -11px rgba(120,116,120,1);
+box-shadow: -2px 15px 4px -11px rgba(120,116,120,1);
+}
+.nav-shadow-light{
+    border-bottom: 1.2px solid  hsl(0, 0%, 100%);;
+    -webkit-box-shadow: -2px 15px 4px -11px rgba(230,225,230,1);
+-moz-box-shadow: -2px 15px 4px -11px rgba(230,225,230,1);
+box-shadow: -2px 15px 4px -11px rgba(230,225,230,1);
+}
