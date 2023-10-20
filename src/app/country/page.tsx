@@ -11,7 +11,7 @@ export default function Country({ country, darkMode }: Props) {
  
   return (
     <>
-    <Link href={`/country/${name?.common || name?.official}`}>
+    <Link href={`/country/${name?.official || name?.common}`}>
     <div
       className={`rounded-md ${darkMode ? 'bg-slate-800 border-dark': 'bg-slate-100 border-white'}`}
      

@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar";
 export default function Home() {
   const [countryData, setCountryData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
   };
