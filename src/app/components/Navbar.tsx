@@ -3,8 +3,12 @@
 "use client";
 
 import { useState } from "react";
+type Props = {
+  darkMode: boolean,
+  toggleDarkMode: () => void
+}
 
-export default function Navbar({darkMode, toggleDarkMode}) {
+export default function Navbar({darkMode, toggleDarkMode}: Props) {
   
   return (
     <div className={`mb-4 flex justify-between p-4 mt-0 ${darkMode ? 'bg-slate-800 nav-shadow-dark': 'bg-slate-100 nav-shadow-light'}`}>

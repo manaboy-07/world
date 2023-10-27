@@ -4,7 +4,7 @@
 import Image from "next/image";
 // import Search from "./components/Search";
 import Country from "./country/page";
-import { getWorld } from "../../lib/fetchApi";
+import { getAllworlds, getWorld } from "../../lib/fetchApi";
 import { ChangeEvent, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 
@@ -36,7 +36,7 @@ export default function Home() {
       const countryData = await filteredData;
       setCountryData((prevState) => countryData);
     } else if (selectedOption == "") {
-      const data = getWorld("all");
+      const data = getAllworlds()
       const countryInfo = await data;
 
       setCountryData((prevState) => countryInfo);
@@ -49,7 +49,7 @@ export default function Home() {
   // const filterCountryByName= async () => {
   //    fetchCountryData()
   // }
-
+ 
   return (
     <div className={`${darkMode ? 'bg-slate-800': 'bg-white'}`}>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} filterCountryByName={filterCountryByName}/> */}
       <div className='my-4 place-items-center grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 '>
-        {countryData.map((country) => (
+        {countryData.map((country: CountryData) => (
           <Country
             darkMode={darkMode} 
             country={country}
