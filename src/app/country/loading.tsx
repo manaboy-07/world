@@ -1,8 +1,13 @@
+/** @format */
+
 export default function Loading() {
-    // You can add any UI inside Loading, including a Skeleton.
-    return (
-        <div>
-            <h2> Loading Data</h2>
-        </div>
-    )
-  }
+  // You can add any UI inside Loading, including a Skeleton.
+  return (
+    <div className='flex justify-center item-center'>
+      <div className='lds-ripple'>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
+}

@@ -75,7 +75,7 @@ export default function Home() {
           <option value='Oceania'>Oceania</option>
         </select>{" "}
         {selectedOption != "" ? (
-          <p className={`${darkMode ? "text-slate-100" : "text-black"} text-xl p-4`}>
+          <p className={`${darkMode ? "text-slate-100" : "text-black"} text-xl p-4 mx-3`}>
             Now Showing results for : {selectedOption}
           </p>
         ) : null}

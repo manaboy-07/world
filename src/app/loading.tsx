@@ -3,8 +3,11 @@
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
-    <div>
-      <h2> Loading Data</h2>
+    <div className='flex items-center justify-center'>
+      <div>
+        <span className='loader'></span>
+        <span>Fetching world data</span>
+      </div>
     </div>
   );
 }

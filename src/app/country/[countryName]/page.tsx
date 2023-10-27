@@ -52,13 +52,17 @@ export default async function CountryDetails({
 
   return (
     <>
-      <div className='text-xl p-3  hover:font-bold' >
-        <Link href='/' style={{
-        width: '400px',
-        height: '300px'
-      }}>👈 Back</Link>
+      <div className='text-xl p-3  hover:font-bold'>
+        <Link
+          href='/'
+          style={{
+            width: "20px",
+            height: "300px",
+          }}>
+          👈 Back
+        </Link>
       </div>
-      
+
       <div
         className='bg-slate-100 flex flex-col justify-center items-center'
         style={{
@@ -98,76 +102,78 @@ export default async function CountryDetails({
               </div>
               <div className='p-8'>
                 <h1 className='font-bold text-xl p-5'>
-                  {countryName.replace("%20", " ")}
+                  {countryName.replace(/%20/g, " ")}
                 </h1>
                 <div className='flex justify-between  p-5'>
                   <div className='flex flex-col '>
                     <h2 className='my-2'>
-                      <span className='font-bold'>Population:</span>
+                      <span className='font-bold'>Population: </span>
                       {Number(population).toLocaleString("en-US")}
                     </h2>
                     <h2 className='my-2'>
-                      <span className='font-bold'>Region:</span>
+                      <span className='font-bold'>Region: </span>
                       {region}
                     </h2>
 
                     <h2 className='my-2'>
-                      <span className='font-bold'>Sub Region:</span>
+                      <span className='font-bold'>Sub Region: </span>
                       {subregion}
                     </h2>
                     <h2 className='my-2'>
-                      <span className='font-bold'>Capital:</span>
+                      <span className='font-bold'>Capital: </span>
                       {capital}
                     </h2>
                   </div>
-                  <div className=''>
+                  <div className='ml-4'>
                     <h2 className='my-2'>
                       <span className='font-bold'>Top Level Domain: </span>
                       {tld}
                     </h2>
-                   <h2 className='my-2'>
-                   {someArray.map((itemObj) => {
-                      return itemObj.map((item: any) => {
-                        if (item.name || item.symbol != undefined) {
+                    <div className='my-3'>
+                      {someArray.map((itemObj) => {
+                        return itemObj.map((item: any) => {
+                          if (item.name || item.symbol != undefined) {
+                            return (
+                              <div key={item.name}>
+                                <h2>
+                                  <span className='font-bold'>
+                                    Currencies:{" "}
+                                  </span>
+                                  {item.name}, {item.symbol}
+                                </h2>
+                              </div>
+                            );
+                          }
+                        });
+                      })}
+                    </div>
+
+                    <div className='my-4'>
+                      {nativeNameArray[0].map((itemObj: any) => {
+                        if (itemObj.common || itemObj.official != undefined) {
                           return (
-                            <div key={item.name}>
+                            <div key={itemObj.name}>
                               <h2>
-                                <span className='font-bold'>Currencies: </span>
-                                {item.name}, {item.symbol}
+                                <span className='font-bold'>Native Name: </span>
+                                {itemObj.common || itemObj.official}
                               </h2>
                             </div>
                           );
                         }
-                      });
-                    })}
-                   </h2>
+                      })}
+                    </div>
 
-                   <h2 className='my-2'>
-                   {nativeNameArray[0].map((itemObj: any) => {
-                      if (itemObj.common || itemObj.official != undefined) {
-                        return (
-                          <div key={itemObj.name}>
-                            <h2>
-                              <span className='font-bold'>Native Name: </span>
-                              {itemObj.common || itemObj.official}
-                            </h2>
-                          </div>
-                        );
-                      }
-                    })}
-                   </h2>
-
-                    <h2 className='my-2'>
+                    <div className='my-2'>
                       <span className='font-bold'>Languages: </span>
 
                       {languagesArray.map(([key, value], index, array) => {
                         return <span className='mx-2'>{value as string}</span>;
                       })}
-                    </h2>
+                    </div>
                   </div>
                 </div>
 
-                <div className='p-5'>
+                <div className='p-3 '>
                   <span className='font-bold mx-2'>Border Countries: </span>
                   {borders ? (
                     <span>
